@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "eu-west-2"   # Change to region you want to build infrastructure in
+}
+
 terraform {
   required_providers {
     aws = {
@@ -5,10 +9,4 @@ terraform {
       version = "~> 6.0"
     }
   }
-backend "s3" {
-    bucket  = "new-terraform-bucket-class7" # Name of the S3 bucket
-    key     = "91625.tfstate"     # The name of the state file in the bucket
-    region  = "us-east-1"         # Use a variable for the region
-    encrypt = true                # Enable server-side encryption (optional but recommended)
-  }
-} 
+}
